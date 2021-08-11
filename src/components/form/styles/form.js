@@ -54,7 +54,7 @@ export const TextSmall = styled.h2`
 export const Link = styled(ReachRouterLink)`
     color: #fff;
     text-decoration: none;
-
+    
     &:hover {
         text-decoration: underline;
     }
@@ -69,7 +69,7 @@ export const Input = styled.input`
     line-height: 50px;
     padding: 5px 20px;
     margin-bottom: 20px;
-
+    
     &:last-of-type {
         margin-bottom: 30px;
     }
@@ -83,9 +83,9 @@ export const Submit = styled.button`
     margin: 0 0 12px;
     padding: 16px;
     border: 0;
-    color: #fff;
+    color: white;
     cursor: pointer;
-
+    
     &:disabled {
         opacity: 0.5;
     }
