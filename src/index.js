@@ -5,25 +5,31 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { FirebaseContext } from './context/firebase';
 
-const firebaseConfig  = {
+
+// import { seedDatabase } from './seed';
+
+const firebaseConfig   = {
   apiKey: "AIzaSyD9BzuFTvo2cZbH0d2c3TRkKwS5M0hUM-w",
   authDomain: "netflix-clone-ed6c8.firebaseapp.com",
-  databaseURL: "https://netflix-clone-ed6c8.firebaseio.com",
+  databaseURL: "https://netflix-clone-ed6c8-default-rtdb.firebaseio.com",
   projectId: "netflix-clone-ed6c8",
   storageBucket: "netflix-clone-ed6c8.appspot.com",
   messagingSenderId: "236889494042",
   appId: "1:236889494042:web:c90d0f23010cc97ed277a3"
 }
 
-const firebase = window.firebase.initializeApp(firebaseConfig );
+const firebase = window.firebase.initializeApp(firebaseConfig);
+
+
+// seedDatabase(firebase);
 
 ReactDOM.render(
-  <React.StrictMode>
+
     <FirebaseContext.Provider value={{ firebase: window.firebase }}>
         <GlobalStyles />
         <App />
     </FirebaseContext.Provider>, 
-  </React.StrictMode>,
+
   document.getElementById('root')
 );
 
