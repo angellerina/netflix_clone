@@ -38,6 +38,7 @@ export function FooterContainer() {
             </Footer.Row>
             <Footer.Break />
             <Footer.Text>Netflix United Kingdom</Footer.Text>
+            <small>Made with ❤️ Sabrina </small>
         </Footer>
     )
 }
