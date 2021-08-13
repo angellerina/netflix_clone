@@ -21,18 +21,23 @@ export default function Signup() {
         event.preventDefault();
         
         firebase
-        .auth()
-        .signInWithEmailAndPassword(emailAddress, password)
-        .then(() => {
-            history.push(ROUTES.BROWSE);
-        })
-        .catch((error) => {
-            setEmailAddress('');
-            setPassword('');
-            setError(error.message)
-        });
-}
-
+            .auth()
+            .createUserWithEmailAndPassword(emailAddress, password)
+            .then((result) =>
+                result.user
+                .updateProfile({
+                    displayName: firstName,
+                    photoURL: Math.floor(Math.random() * 5 ) + 1,
+                })
+                .then(() => {
+                    setEmailAddress('');
+                    setPassword('');
+                    setError('');
+                    history.push(ROUTES.BROWSE);
+                })
+            ).catch((error) => setError(error.message));
+    };
+    
     return (
         <>
             <HeaderContainer>
